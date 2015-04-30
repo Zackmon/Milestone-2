@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Service.Amazon;
 import com.amazon.advertising.api.sample.ItemLookupSample;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -32,12 +33,12 @@ public class test extends HttpServlet {
      */
     
 
-   
+   Amazon tt;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            ItemLookupSample ils;
-            
+        
+         tt.request();
             
     }
 
