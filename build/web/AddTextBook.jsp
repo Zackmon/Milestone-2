@@ -29,7 +29,7 @@
 
             
                 
-                <form action="add" method="post">
+                <form action="addManual" method="post">
                     <div class="panel panel-width">
                     <div class="panel-title">Book Details Details :</div>
                     
@@ -40,7 +40,7 @@
                         <label for="Book Title"> Title </label>
                         <input type="text" class="form-control" id="Book Title" name="Book Title" value="${book.title}">
                         <label for="Book Authors"> Authors (please separate  the authors with a ,) </label>
-                        <input type="email" class="form-control" id="Book Authors" name="Book Authors" value="${book.authors}">
+                        <input type="text" class="form-control" id="Book Authors" name="Book Authors" value="${book.authors}">
                         <label for="Book Date"> Publishing Date </label>
                         <input type="text" class="form-control" id="Book Date" name="Book Date" value="${book.date}">
                         <label for="Book Publisher"> Publisher </label>

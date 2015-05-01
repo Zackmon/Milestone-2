@@ -17,7 +17,6 @@ public class TextBook {
     public String authors;
     public String publishedDate;
     public String publisher;
-    public String Distributor;
     public double price;
     public String img_url;
     public int est_male_copy;
@@ -26,6 +25,10 @@ public class TextBook {
 
     public TextBook(String isbn) {
         this.isbn = isbn;
+    }
+
+    public TextBook() {
+        
     }
     
     public String getIsbn() {
@@ -68,13 +71,9 @@ public class TextBook {
         this.publisher = publisher;
     }
 
-    public String getDistributor() {
-        return Distributor;
-    }
+    
 
-    public void setDistributor(String Distributor) {
-        this.Distributor = Distributor;
-    }
+    
 
     public double getPrice() {
         return price;

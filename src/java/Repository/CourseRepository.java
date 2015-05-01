@@ -28,6 +28,8 @@ public class CourseRepository {
     {
         semesters = new HashMap<>();
         list_semesters = new ArrayList <Semester>();
+        insertTestingData();
+        
     }
 
     public List<Semester> getSemester()
@@ -51,7 +53,7 @@ public class CourseRepository {
         
         for (Course all_course : all_courses) 
         {
-            if(all_course.getCorrdinator().getId() == cor_id)
+            if(all_course.getCorrdinatorID() == cor_id)
                 cor_courses.add(all_course);
         }
         
@@ -69,7 +71,14 @@ public class CourseRepository {
         }
         return null;
     }
-    
+    public void updateCourse (int sem_id,Course course)
+    {
+       List<Course> list=semesters.get(sem_id).getCourse();
+        for (Course list1 : list) {
+            if(list1.getCourseid()== course.getCourseid())
+                list1=course;
+        }
+    }
     public TextBook getCourseTextBook (int sem_id,int cid)
     {
         TextBook nullfied = new TextBook("Not Assigned");
@@ -83,5 +92,37 @@ public class CourseRepository {
             return course.getTextbook();
         }
     }
+    
+    public void updateCourseTextBook (int sem_id,int cid,TextBook book)
+      {
+          Course course =getCourse(sem_id,cid);
+          course.setTextbook(book);
+          updateCourse(sem_id,course);
+      }
+    //------------Below are only for testing they are irrlevent to the content of the code-------------------------------------------
+    public void insertTestingData(){
+        Semester summer = new Semester (0,2015,"Summer",new ArrayList<Course>());
+        Semester spring = new Semester (1,2015,"Spring",new ArrayList<Course>());
+        Semester fall = new Semester (2,2015,"Fall",new ArrayList<Course>());
+        Course c0 = new Course(0,"CMPS 405","Operating Systems",1,null);
+        Course c1 = new Course(1,"CMPS 356","Software Devlopment of Entrprise App",1,null);
+        Course c2 = new Course(2,"CMPS 411","Software Engineer",2,null);
+        Course c3 = new Course(3,"Math 101","Calculus I",2,null);
+        summer.getCourse().add(c3);
+        spring.getCourse().add(c2);
+        spring.getCourse().add(c1);
+        fall.getCourse().add(c0);
+        list_semesters.add(fall);
+        list_semesters.add(spring);
+        list_semesters.add(summer);
+        semesters.put(summer.getSemesterid(),summer);
+        semesters.put(spring.getSemesterid(),spring);
+        semesters.put(fall.getSemesterid(),fall);
+        
+        
+        
+        
+    }
+    
   }
 

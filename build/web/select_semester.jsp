@@ -30,13 +30,13 @@
            <label for="sel1">Please select a semester:</label>
            <select class="form-control" id="selected_semester" name="selected_semester">
         <c:forEach var="semester" items="${requestScope.semester}">
-          <option value=${semester.id}> ${semester.term} ${semester.year} </option>
+          <option value=${semester.semesterid}> ${semester.term} ${semester.year} </option>
         </c:forEach>
       </select>
 
       <br>
       <br>
-      <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
+      <input class="btn btn-primary" type="submit"value="Submit">
       </form>
       </div>
             

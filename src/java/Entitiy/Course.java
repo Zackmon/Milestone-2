@@ -14,8 +14,18 @@ public class Course {
     public int courseid;
     public String coursecode;
     public String name;
-    public Corrdinator corrdinator;
+    public int corrdinatorID;
     public TextBook textbook;
+
+    public Course(int courseid, String coursecode, String name, int corrdinatorID, TextBook textbook) {
+        this.courseid = courseid;
+        this.coursecode = coursecode;
+        this.name = name;
+        this.corrdinatorID = corrdinatorID;
+        this.textbook = textbook;
+    }
+    
+    
 
     public int getCourseid() {
         return courseid;
@@ -33,13 +43,23 @@ public class Course {
         this.name = name;
     }
 
-    public Corrdinator getCorrdinator() {
-        return corrdinator;
+    public String getCoursecode() {
+        return coursecode;
     }
 
-    public void setCorrdinator(Corrdinator corrdinator) {
-        this.corrdinator = corrdinator;
+    public void setCoursecode(String coursecode) {
+        this.coursecode = coursecode;
     }
+
+    public int getCorrdinatorID() {
+        return corrdinatorID;
+    }
+
+    public void setCorrdinatorID(int corrdinatorID) {
+        this.corrdinatorID = corrdinatorID;
+    }
+
+   
 
     public TextBook getTextbook() {
         return textbook;

@@ -79,7 +79,6 @@ Price in QR, Textbook cover page image)-->
                                 <th class="col-md-1">Authors</th>
                                 <th class="col-md-1">Publication Date</th>
                                 <th class="col-md-1">Publisher</th>
-                                <th class="col-md-1">Distributor</th>
                                 <th class="col-md-1">Price(QR)</th>
                                 <th class="col-md-1">Cover Image</th>
                                 <th class="col-md-1"></th>
@@ -96,9 +95,8 @@ Price in QR, Textbook cover page image)-->
                                 <td>${book.authors}</td>
                                 <td>${book.publishedDate}</td>
                                 <td>${book.publisher}</td>
-                                <td>${book.Distributor}</td>
                                 <td>${book.price} QR</td>
-                                <td><img src="${book.img_url}"></td>
+                                <td><img src="${book.img_url}" style="width: 150;height: 150"></td>
                         <form action="assign" method="post">
                             <input hidden="" name="book_isbn" id="book_isbn" value="${book.isbn}">
                              <input hidden="" name="course_id" id="course_id" value="${requestScope.id}">

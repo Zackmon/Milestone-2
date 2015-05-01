@@ -5,7 +5,8 @@
  */
 package Controller;
 
-import Entitiy.Semester;
+import Entitiy.TextBook;
+import Repository.BookRepository;
 import Repository.CourseRepository;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,29 +22,35 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author salem_alghanim
  */
-@WebServlet(name = "SemesterConttroller", urlPatterns = {"/semester"})
-public class SemesterConttroller extends HttpServlet {
+@WebServlet(name = "assignController", urlPatterns = {"/assign"})
+public class assignController extends HttpServlet {
 
-  @Inject
-  CourseRepository crepo;
-  
-  List <Semester> semester;
-    
+    @Inject
+        BookRepository brepo;
+    @Inject
+        CourseRepository crepo;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       semester = crepo.getSemester();
-       request.setAttribute("semester", semester);
-       request.getRequestDispatcher("select_semester.jsp").forward(request, response);
-        
+        List<TextBook> book_list = brepo.getTextBooks();
+        request.setAttribute("book", book_list);
+        request.setAttribute("id", request.getParameter("id"));
+
+        request.getRequestDispatcher("assign_tb.jsp").forward(request, response);
+
     }
 
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-            
+            TextBook book;
+            book = brepo.getTextBook(request.getParameter("book_isbn"));
+            int sem_id = (int) request.getSession().getAttribute("semester_id");
+            int cid= Integer.parseInt(request.getParameter("course_id"));
+            crepo.updateCourseTextBook(sem_id, cid, book);
+            response.sendRedirect("course");
     }
-    
+
+
 }

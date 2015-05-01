@@ -48,7 +48,6 @@ Price in QR, Textbook cover page image)-->
                                 <th class="col-md-1">Authors</th>
                                 <th class="col-md-1">Publication Date</th>
                                 <th class="col-md-1">Publisher</th>
-                                <th class="col-md-1">Distributor</th>
                                 <th class="col-md-1">Price(QR)</th>
                                 <th class="col-md-1">Cover Image</th>
                                 <th class="col-md-1">Add/Replace</th>
@@ -65,9 +64,8 @@ Price in QR, Textbook cover page image)-->
                                 <td>${course.textbook.authors}</td>
                                 <td>${course.textbook.publishedDate}</td>
                                 <td>${course.textbook.publisher}</td>
-                                <td>${course.textbook.Distributor}</td>
                                 <td>${course.textbook.price}</td>
-                                <td><img src="${course.textbook.img_url}"></td>
+                                <td><img src="${course.textbook.img_url}" style="width: 150;height: 150"></td>
                                 <td><a href="assign?id=${course.courseid}">Add/Replace</a></td>
                                 
                             </tr>

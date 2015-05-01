@@ -5,10 +5,11 @@
  */
 package Controller;
 
-import Entitiy.Semester;
-import Repository.CourseRepository;
+import Entitiy.TextBook;
+import Repository.BookRepository;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -21,29 +22,36 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author salem_alghanim
  */
-@WebServlet(name = "SemesterConttroller", urlPatterns = {"/semester"})
-public class SemesterConttroller extends HttpServlet {
-
-  @Inject
-  CourseRepository crepo;
-  
-  List <Semester> semester;
-    
+@WebServlet(name = "findController", urlPatterns = {"/find"})
+public class findController extends HttpServlet {
+    @Inject
+        BookRepository brepo;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       semester = crepo.getSemester();
-       request.setAttribute("semester", semester);
-       request.getRequestDispatcher("select_semester.jsp").forward(request, response);
-        
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        boolean bool=brepo.checkIfExist(request.getParameter("isbn"));
+        String isbn=request.getParameter("isbn");
+        if(bool==true)
+        {
+            List<TextBook> one_book = new ArrayList <TextBook>();
+            TextBook book = brepo.getTextBook(isbn);
+            one_book.add(book);
+            request.setAttribute("book", one_book);
+            request.getRequestDispatcher("assign_tb.jsp").forward(request, response);
+
+        }
         
-            
-    }
-    
+        else
+        {
+          request.getRequestDispatcher("notfound.jsp").forward(request, response);
+   
+        }
+    }   
+
+
 }

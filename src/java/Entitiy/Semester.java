@@ -17,6 +17,14 @@ public class Semester {
     public String term;
     public List<Course> course;
 
+    public Semester(int semesterid, int year, String term, List<Course> course) {
+        this.semesterid = semesterid;
+        this.year = year;
+        this.term = term;
+        this.course = course;
+    }
+
+   
     public int getSemesterid() {
         return semesterid;
     }
