@@ -64,7 +64,7 @@ Price in QR, Textbook cover page image)-->
                                 <td>${course.textbook.authors}</td>
                                 <td>${course.textbook.publishedDate}</td>
                                 <td>${course.textbook.publisher}</td>
-                                <td>${course.textbook.price}</td>
+                                <td>${course.textbook.price} QR</td>
                                 <td><img src="${course.textbook.img_url}" style="width: 150;height: 150"></td>
                                 <td><a href="assign?id=${course.courseid}">Add/Replace</a></td>
                                 

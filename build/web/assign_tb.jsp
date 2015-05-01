@@ -59,7 +59,8 @@
             <div class="panel panel-default">
 
                 <div class="panel-heading"><label></label>
-                    
+                    <a href="addManual"><input type="button" value="Add TextBook" class="btn btn-success"></a> 
+                           
                 </div>
 
                <!-- The list should include the Course Code, Course Name, Textbook

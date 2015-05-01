@@ -28,7 +28,7 @@
                 
                 <span>Couldn't find a book with the specified ISBN </span> </br>
                 
-                <button class="btn  btn-primary" type="submit">Add TextBook Through Amazon</button> </br> </br>
+             <!--  <button class="btn  btn-primary" type="submit">Add TextBook Through Amazon</button> --></br> </br> 
                 <a href="addManual"><button class="btn  btn-primary" type="submit">Add TextBook Manually </button> </a></br> </br>
                 <a href="semester"> <button class="btn  btn-primary" type="submit">Return To Main Page</button>  </a>
             </div> 

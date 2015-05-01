@@ -42,6 +42,7 @@ public class findController extends HttpServlet {
             TextBook book = brepo.getTextBook(isbn);
             one_book.add(book);
             request.setAttribute("book", one_book);
+            request.setAttribute("id", request.getParameter("id"));
             request.getRequestDispatcher("assign_tb.jsp").forward(request, response);
 
         }
