@@ -1,4 +1,5 @@
 ﻿<html lang="en">
+    ﻿<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,9 +41,10 @@
             <br>
             
             <div class="form-group">
-           <form action="course_list.html" >
+           <form action="find" method="post">
            <label for="isbn">Please Enter the ISBN:</label>
-      <input type="text" id="isbn" class="form-control">
+           <input type="text" id="isbn"  name="isbn" class="form-control">
+      <input hidden="" value="${requestScope.id}" id="id" name="id">
       <br>
             <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Find Book">
       <br>
@@ -56,7 +58,7 @@
             
             <div class="panel panel-default">
 
-                <div class="panel-heading"><label>Result:</label>
+                <div class="panel-heading"><label></label>
                     
                 </div>
 
@@ -75,89 +77,37 @@ Price in QR, Textbook cover page image)-->
                                 <th class="col-md-3">ISBN</th>
                                 <th class="col-md-2">Title</th>
                                 <th class="col-md-1">Authors</th>
-                                <th class="col-md-1">Publication Year</th>
+                                <th class="col-md-1">Publication Date</th>
                                 <th class="col-md-1">Publisher</th>
                                 <th class="col-md-1">Distributor</th>
                                 <th class="col-md-1">Price(QR)</th>
                                 <th class="col-md-1">Cover Image</th>
-                                <th class="col-md-1">Status</th>
-                                <th class="col-md-1"># of Copies</th>
-                                <th class="col-md-1">Delivery info</th>
                                 <th class="col-md-1"></th>
                                
                                 
                             </tr>
                         </thead>
                         <tbody>
-
-                           <!-- <tr >
-                                
-                                <td >978-3-16-148410-0</td>
-                                <td >Introduction to Java</td>
-                                <td>Author</td>
-                                <td>2005</td>
-                                <td>Pearsons</td>
-                                <td>Dsitrbutor</td>
-                                <td>100 QR</td>
-                                <td><a href="">Image</a></td>
-                                <td>Available</td>
-                                <td>150</td>
-                                <td>-</td>
-                                
-                                
-                            </tr>
-                            <tr >
-                                
-                                <td >978-3-16-148410-0</td>
-                                <td >Introduction to Java</td>
-                                <td>Author</td>
-                                <td>2005</td>
-                                <td>Pearsons</td>
-                                <td>Dsitrbutor</td>
-                                <td>100 QR</td>
-                                <td><a href="">Image</a></td>
-                                <td>Not Available</td>
-                                <td>0</td>
-                                <td>-</td>
-                                
-                                
-                            </tr>-->
+                        <c:forEach var="book" items="${requestScope.book}">
                             <tr >
                                
-                                <td >978-3-16-148410-0</td>
-                                <td >Introduction to Java</td>
-                                <td>Author</td>
-                                <td>2005</td>
-                                <td>Pearsons</td>
-                                <td>Dsitrbutor</td>
-                                <td>100 QR</td>
-                                <td><a href="">Image</a></td>
-                                <td>Ordered</td>
-                                <td>100</td>
-                                <td>30/4/2015</td>
+                                <td >${book.isbn}</td>
+                                <td >${book.title}</td>
+                                <td>${book.authors}</td>
+                                <td>${book.publishedDate}</td>
+                                <td>${book.publisher}</td>
+                                <td>${book.Distributor}</td>
+                                <td>${book.price} QR</td>
+                                <td><img src="${book.img_url}"></td>
+                        <form action="assign" method="post">
+                            <input hidden="" name="book_isbn" id="book_isbn" value="${book.isbn}">
+                             <input hidden="" name="course_id" id="course_id" value="${requestScope.id}">
                                 <td><input class="btn btn-primary" type="submit" id="submit" name="submit" value="Assign Book"></td>
-                               
+                                 
+                        </form>
                                 
                             </tr>
-                            <!--
-                            <tr >
-                                <td >CMPS305</td>
-                                <td >Data structures</td>
-                                <td >Not assigned</td>
-                                <td >Not assigned</td>
-                                <td>Not assigned</td>
-                                
-                            </tr>
-                             <tr >
-                                <td >CMPS111</td>
-                                <td >Programming</td>
-                                <td >Not assigned</td>
-                                <td >Not assigned</td>
-                                <td>Ordered, Est. arrival: 20/april/2015</td>
-                                
-                            </tr>
-                            -->
-                            
+                        </c:forEach>    
                         </tbody>
                     </table>
                 </div>

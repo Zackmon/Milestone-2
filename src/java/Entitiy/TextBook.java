@@ -14,7 +14,7 @@ import java.util.List;
 public class TextBook {
     public String isbn;
     public String title;
-    public List<String> authors;
+    public String authors;
     public String publishedDate;
     public String publisher;
     public String Distributor;
@@ -44,11 +44,11 @@ public class TextBook {
         this.title = title;
     }
 
-    public List<String> getAuthors() {
+    public String getAuthors() {
         return authors;
     }
 
-    public void setAuthors(List<String> authors) {
+    public void setAuthors(String authors) {
         this.authors = authors;
     }
 

@@ -8,11 +8,13 @@ package Repository;
 import Entitiy.TextBook;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Singleton;
 
 /**
  *
  * @author salem_alghanim
  */
+@Singleton
 public class BookRepository {
     public List<TextBook> textbooks_list;
     

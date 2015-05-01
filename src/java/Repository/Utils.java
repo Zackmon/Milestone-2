@@ -1,4 +1,4 @@
-package hifz.repository;
+package Repository;
 
 import java.net.URL;
 import java.util.Scanner;

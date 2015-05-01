@@ -10,11 +10,21 @@ package Entitiy;
  * @author salem_alghanim
  */
 public class Corrdinator {
-    public String name;
     public int id;
+    public String name;
+    public String username;
     public String password;
     public String email;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
     public String getName() {
         return name;
     }

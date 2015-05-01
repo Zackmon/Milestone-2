@@ -1,4 +1,6 @@
 ﻿<html lang="en">
+    ﻿<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,22 +16,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><em>Textbook Management System</em></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                
-            </div>
-        </div>
-    </nav>
+    <jsp:include page="head.jsp" />
+
 
     
 
@@ -38,13 +26,12 @@
         <div class="body">
             <br>
             <div class="form-group">
-           <form action="course_list.html" >
+      <form action="course" method="get" >
            <label for="sel1">Please select a semester:</label>
-      <select class="form-control" id="sel1">
-        <option>Spring 2015</option>
-        <option>Fall 2014</option>
-        <option>Spring 2014</option>
-        <option>Fall 2013</option>
+           <select class="form-control" id="selected_semester" name="selected_semester">
+        <c:forEach var="semester" items="${requestScope.semester}">
+          <option value=${semester.id}> ${semester.term} ${semester.year} </option>
+        </c:forEach>
       </select>
 
       <br>

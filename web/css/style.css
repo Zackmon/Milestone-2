@@ -1,0 +1,139 @@
+body {
+  padding-top: 50px;	
+}
+.body {
+  padding: 10px 15px;
+  text-align: center;
+  border-left: 1px #000 solid; 
+  border-right: 1px #000 solid; 
+  padding-bottom: 75px;
+  min-height: 550px;
+  height:auto;
+}
+
+.range-selector label {
+    display: inline-block;
+}
+
+.range-selector output {
+    display: inline-block;
+}
+
+.range-selector input {
+    display: inline-block;
+}
+
+.footer{
+	height:100px;
+	background-color: #f5f5f5;
+}
+
+#submit{
+	margin-right: 10px;
+}
+
+div.panel-heading{
+	height: 50px;
+}
+
+.footer > div{
+  width: 150px;
+  height: 100%;
+  padding-top:35px;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
+div.col-xs-6 input{
+  display: inline-block;
+  margin:0 auto;
+
+  
+}
+
+.range-container{
+  width:100%;
+
+}
+
+/*body .container{
+  width: 100%;
+}*/
+
+.panel-width{
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 20px
+}
+.panel-width-2{
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 20px
+}
+
+form>input{
+  margin-top: 15px;
+}
+form>button{
+  margin-top: 20px;
+}
+.err-message{
+  margin:0 auto;
+  text-align: center;
+}
+
+.register-form{
+  width: 90%;
+  margin: 0 auto;
+}
+.vcenter {
+    display: table-cell;
+}
+
+.three-items{
+  width: 100%;
+  display: table;
+}
+
+td>textarea.form-control{
+  width:100%;
+height:100%; 
+resize:none;
+}
+
+.criteria-header{
+  color: blue;
+  font-weight: bold;
+}
+
+.criteria-body{
+  display: block;
+  margin: 5 5 5 5;
+}
+
+/*td>hr.linebreak{
+  background-color: black;
+}*/
+
+td>hr { 
+  position: relative;
+  left:3%;
+  width: 94%;
+  display: block; 
+  height: 1px;
+  border: 0; 
+  border-top: 2px solid #ccc;
+  margin: 1em 0; padding: 0; 
+}
+
+
+table.table{
+  border-top: 2px solid #ccc;
+}
+
+.error_label {
+	color: #333;
+	font-size: 16px;
+	line-height: 40px;
+        color: firebrick;
+}

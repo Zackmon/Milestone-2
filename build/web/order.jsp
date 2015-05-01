@@ -14,22 +14,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><em>Textbook Management System</em></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                
-            </div>
-        </div>
-    </nav>
+   <jsp:include page="head.jsp" />
 
     
 
@@ -38,25 +23,10 @@
         <div class="body">
             
             <br>
-            
-            <div class="form-group">
-           <form action="course_list.html" >
-           <label for="isbn">Please Enter the ISBN:</label>
-      <input type="text" id="isbn" class="form-control">
-      <br>
-            <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
-      <br>
-      
-      
-      </form>
-      </div>
-
             <br>
             <br>
-            
             <div class="panel panel-default">
-
-                <div class="panel-heading"><label>Book Rating and Comments</label>
+                <div class="panel-heading"><label>Order List</label>
                     
                 </div>
 
@@ -65,12 +35,11 @@ details per course (ISBN, Title, Authors, Publication Year, Publisher, Distribut
 Price in QR, Textbook cover page image)-->
 
                 <!-- table-responsive makes the table scrollable on small screens-->
-                
-
                 <div class="table-responsive">
                     <table class="table table-hover" id="p-table">
                         <thead>
                             <tr>
+                                <th class="col-md-1">Order #</th>
                                 
                                 <th class="col-md-2">ISBN</th>
                                 <th class="col-md-2">Title</th>
@@ -79,16 +48,15 @@ Price in QR, Textbook cover page image)-->
                                 <th class="col-md-1">Publisher</th>
                                 <th class="col-md-1">Distributor</th>
                                 <th class="col-md-1">Price(QR)</th>
-                                <th class="col-md-1">Cover Image</th>
-                                <th class="col-md-2">Rating</th>
-                                
-                               
+                                <th class="col-md-1"># copies</th>
+                                <th class="col-md-1">Estimated arrival</th>
                                 
                             </tr>
                         </thead>
                         <tbody>
 
                             <tr >
+                                <td >343746348</td>
                                 
                                 <td >978-3-16-148410-0</td>
                                 <td >Introduction to Java</td>
@@ -97,12 +65,25 @@ Price in QR, Textbook cover page image)-->
                                 <td>Pearsons</td>
                                 <td>Dsitrbutor</td>
                                 <td>100 QR</td>
-                                <td><a href="">Image</a></td>
-                                <td><img src="3-5-stars.png" alt="" width="100" ></td>
-                                
+                                <td>200</td>
+                                <td>30/4/2015</td>
                                 
                             </tr>
                             
+                            <tr >
+                                <td >374638741</td>
+                                
+                                <td >978-3-16-148410-0</td>
+                                <td >Introduction to Java</td>
+                                <td>Author</td>
+                                <td>2005</td>
+                                <td>Pearsons</td>
+                                <td>Dsitrbutor</td>
+                                <td>100 QR</td>
+                                <td>200</td>
+                                <td>30/4/2015</td>
+                                
+                            </tr>
                             <!--
                             <tr >
                                 <td >CMPS305</td>
@@ -124,21 +105,8 @@ Price in QR, Textbook cover page image)-->
                             
                         </tbody>
                     </table>
-
-
                 </div>
-
-                
             </div>
-            <h3>Comments:</h3>
-
-                <div class="comment">
-                        <h3 style="padding: 0; margin:0;"><strong>Nice book!</strong></h3>
-                        <img src="3-5-stars.png" alt="" width="100">
-                        <br><br>
-                        <p>I really liked the book!</p>
-
-                    </div>
         </div>
     </div>
 
