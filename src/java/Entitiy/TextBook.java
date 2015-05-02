@@ -22,14 +22,37 @@ public class TextBook {
     public int est_male_copy;
     public int est_female_copy;
     public int est_Instructor_copy;
+    
+     public TextBook(String isbn, String title, String authors,
+			String publishedDate, String publisher, double price,
+			String img_url, int est_male_copy, int est_female_copy,
+			int est_Instructor_copy) {
+		this.isbn = isbn;
+		this.title = title;
+		this.authors = authors;
+		this.publishedDate = publishedDate;
+		this.publisher = publisher;
+		this.price = price;
+		this.img_url = img_url;
+		this.est_male_copy = est_male_copy;
+		this.est_female_copy = est_female_copy;
+		this.est_Instructor_copy = est_Instructor_copy;
+	}
+     
+     public TextBook() {
+    	this.isbn = null;
+    	this.price =0.0;
+    	this.est_female_copy=0;
+    	this.est_Instructor_copy=0;
+    	this.est_male_copy =0;
+        
+    }
 
     public TextBook(String isbn) {
         this.isbn = isbn;
     }
 
-    public TextBook() {
-        
-    }
+ 
     
     public String getIsbn() {
         return isbn;

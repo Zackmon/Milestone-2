@@ -23,7 +23,21 @@ import javax.ejb.Singleton;
 public class CourseRepository {
     private Map <Integer ,Semester> semesters;
     private List<Semester> list_semesters; 
+
+    public CourseRepository() {
+    }
     
+    public CourseRepository(Map <Integer ,Semester> semesters,
+			List<Semester> list_semesters,int sem_id,int cor_id,int cid,Course course,TextBook book) {
+		
+		insertData();
+		this.semesters = semesters;
+		this.list_semesters = list_semesters;
+		this.getCourses(sem_id);
+		this.getCorrdinatorCourses(sem_id, cor_id);
+		this.getCourse(sem_id, cid);
+		this.getCourseTextBook(sem_id, cid);
+	}
     public void insertData () 
     {
         semesters = new HashMap<>();

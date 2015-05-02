@@ -15,7 +15,19 @@ public class Corrdinator {
     public String username;
     public String password;
     public String email;
+    
+    public Corrdinator(){
+    	this.id = 0;
+    }
 
+    public Corrdinator(int id, String name, String username, String password,
+			String email) {
+		this.id = id;
+		this.name = name;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
     public String getUsername() {
         return username;
     }

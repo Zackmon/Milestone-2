@@ -18,6 +18,13 @@ import javax.ejb.Singleton;
 public class BookRepository {
     public List<TextBook> textbooks_list;
     
+    public BookRepository(){}
+	  
+    public BookRepository(String ISBN,TextBook textbook,String ISBN2) {
+    	this.addTextBook(textbook);
+    	this.getTextBook(ISBN);
+    	this.checkIfExist(ISBN2);
+	}
     public List<TextBook> getTextBooks()
     {
         if(textbooks_list == null)

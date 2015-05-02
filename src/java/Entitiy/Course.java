@@ -17,6 +17,11 @@ public class Course {
     public int corrdinatorID;
     public TextBook textbook;
 
+     public Course(){
+    	this.corrdinatorID =0;
+    	this.corrdinatorID = 0;
+    }
+     
     public Course(int courseid, String coursecode, String name, int corrdinatorID, TextBook textbook) {
         this.courseid = courseid;
         this.coursecode = coursecode;

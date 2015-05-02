@@ -77,8 +77,9 @@ public class UsersRepository {
         userArray = gson.fromJson(userStr, Corrdinator[].class);
         //Convert the array to a editable list 
         users = new ArrayList<>(Arrays.asList(userArray));
-       
         
     }
+    
+  
+   }
 
-}

@@ -16,6 +16,12 @@ public class Semester {
     public int year;
     public String term;
     public List<Course> course;
+    
+     public Semester (){
+    	this.semesterid = 0;
+    	this.year = 0;
+    
+    }
 
     public Semester(int semesterid, int year, String term, List<Course> course) {
         this.semesterid = semesterid;
